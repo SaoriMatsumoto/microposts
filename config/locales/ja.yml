@@ -6,12 +6,7 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-    attributes:
-          user:
-           name: 名前
-           password: パスワード
-           password_confirmation: パスワード確認
-           email: メールアドレス
+
   date:
     abbr_day_names:
     - 日
@@ -135,6 +130,8 @@ ja:
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
       other_than: は%{count}以外の値にしてください
+      invalid_date: の指定が不正です
+      invalid_date_format: の形式が不正です
     template:
       body: 次の項目を確認してください
       header:
