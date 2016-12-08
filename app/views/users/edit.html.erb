@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>Edit profile</h1>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -17,7 +17,16 @@
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
             
-            <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+            <%= f.label :profile %>
+            <%= f.text_area :profile, class: 'form-control', rows: '3' %>
+            
+            <%= f.label :location %>
+            <%= f.text_field :location, class: 'form-control' %>
+            
+            <%= f.label :birthday %>
+            <%= f.text_field :birthday, class: 'form-control', placeholder: '1980/01/01' %>
+            
+            <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
         <% end %>
     </div>
 </div>
