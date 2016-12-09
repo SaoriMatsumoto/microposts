@@ -1,17 +1,30 @@
-<h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
-</h1>
-
-<div class="panel panel-default">
-    <div class="panel-heading">Profile</div>
-    <div class="panel-body">
-      <p>
-        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-        <%= @user.profile %>
-      </p>
-      <p><%= "Location:#{@user.location}" %></p>
-      <p><%= "Birthday:#{@user.birthday}" %></p>
-      <p><%= link_to "Edit profile" , edit_user_path(@user) %></p>
-     </div>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user-info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <div class="panel panel-default">
+      <div class="panel-heading">Profile</div>
+      <div class="panel-body">
+        <p>
+          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+          <%= @user.profile %>
+        </p>
+        <p><%= "Location:#{@user.location}" %></p>
+        <p><%= "Birthday:#{@user.birthday}" %></p>
+        <p><%= link_to "Edit profile" , edit_user_path(@user) %></p>
+      </div>
+    </div>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  </div>
 </div>
