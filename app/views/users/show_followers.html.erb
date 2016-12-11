@@ -1,0 +1,16 @@
+<div class="row">
+  <%= render 'aside' %>
+  <div class="col-md-8">
+    <h3>Followers</h3>
+    <% @user.follower_users.each do |user| %>
+    <div class="panel panel-default col-md-6">
+      <div class="panel-body">
+        <%= gravatar_for user %>
+        <%= link_to "#{user.name}", user_path(user) %><br>
+        <%= user.profile %>
+      </div>
+    </div>
+    <% end %>
+    </ul>
+  </div>
+</div>
